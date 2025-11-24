@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificados - IA e Bibliotecas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            padding: 50px 40px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .info-box h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-box p {
+            line-height: 1.8;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .search-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .search-container label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .search-button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .search-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .search-button:active {
+            transform: translateY(0);
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+        }
+        
+        .result.error {
+            background: #ffebee;
+            border-left-color: #f44336;
+        }
+        
+        .result p {
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .result a {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .result a:hover {
+            text-decoration: underline;
+        }
+        
+        .instructions {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+            margin-top: 30px;
+        }
+        
+        .instructions h3 {
+            color: #e65100;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .instructions p {
+            color: #5d4037;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .emoji {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="emoji">🏆</span> Certificados</h1>
+        <p class="subtitle">IA e Bibliotecas<br>Escola Básica António Dias Simões - Ovar</p>
+        
+        <div class="info-box">
+            <h2><span class="emoji">🔐</span> Acesso Privado</h2>
+            <p>Para proteger a privacidade dos formandos, cada certificado possui um código único.</p>
+            <p>Insira o seu código de 3 dígitos abaixo para aceder ao certificado.</p>
+        </div>
+        
+        <div class="search-container">
+            <label for="certCode">Código do Certificado:</label>
+            <input 
+                type="text" 
+                id="certCode" 
+                class="search-input" 
+                placeholder="001" 
+                maxlength="3"
+                pattern="[0-9]*"
+            >
+            <button class="search-button" onclick="acessarCertificado()">
+                🔍 Aceder ao Certificado
+            </button>
+            
+            <div id="result" class="result"></div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 Como obter o seu código?</h3>
+            <p>
+                O código do certificado foi fornecido pelo formador durante a entrega dos certificados.
+                Se não recebeu o seu código, entre em contacto com a escola.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>🤖 Formação "IA e Bibliotecas" - Novembro 2025</p>
+            <p>Escola Básica António Dias Simões - Ovar</p>
+        </div>
+    </div>
+    
+    <script>
+        function acessarCertificado() {
+            const code = document.getElementById('certCode').value.trim();
+            const result = document.getElementById('result');
+            
+            // Validar código
+            if (!code || code.length !== 3 || !/^\d{3}$/.test(code)) {
+                result.className = 'result error show';
+                result.innerHTML = '<p>❌ Por favor, insira um código válido de 3 dígitos (exemplo: 001, 015, 027).</p>';
+                return;
+            }
+            
+            // Verificar se código existe (001-027)
+            const codeNum = parseInt(code);
+            if (codeNum < 1 || codeNum > 27) {
+                result.className = 'result error show';
+                result.innerHTML = '<p>❌ Código inválido. Os códigos disponíveis são de 001 a 027.</p>';
+                return;
+            }
+            
+            // Redirecionar para o certificado
+            const url = `certificado_${code}.html`;
+            window.location.href = url;
+        }
+        
+        // Permitir Enter para buscar
+        document.getElementById('certCode').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                acessarCertificado();
+            }
+        });
+        
+        // Permitir apenas números
+        document.getElementById('certCode').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+</body>
+</html>

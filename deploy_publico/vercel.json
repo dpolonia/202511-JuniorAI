@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "202511-juniorai",
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    }
+  ]
+}
