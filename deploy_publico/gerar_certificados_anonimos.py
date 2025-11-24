@@ -40,7 +40,7 @@ formandos = [
 ]
 
 # URL base do Vercel
-BASE_URL = "https://202511-juniorai.vercel.app"
+BASE_URL = "https://202511-junior-ai.vercel.app"
 
 # Template HTML do certificado
 template_html = '''<!DOCTYPE html>
