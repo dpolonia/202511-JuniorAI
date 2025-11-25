@@ -255,7 +255,7 @@ template_html = '''<!DOCTYPE html>
         
         .qr-code-container {
             position: absolute;
-            bottom: 28mm;
+            bottom: 35mm;
             right: 25mm;
             text-align: center;
             z-index: 20;
