@@ -333,7 +333,7 @@ template_html = '''<!DOCTYPE html>
 </html>'''
 
 # Criar diretório de saída
-output_dir = '/mnt/user-data/outputs'
+output_dir = '.'
 os.makedirs(output_dir, exist_ok=True)
 
 # Gerar certificados
