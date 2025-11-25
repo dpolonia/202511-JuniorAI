@@ -91,7 +91,7 @@ template_html = '''<!DOCTYPE html>
             position: absolute;
             top: 20mm;
             left: 20mm;
-            right: 20mm;
+            right: 25mm;
             bottom: 20mm;
             border: 1px solid #95a5a6;
             border-radius: 8px;
@@ -211,10 +211,10 @@ template_html = '''<!DOCTYPE html>
         }
 
         .signatures-container {
-            margin-top: 35px;
+            margin-top: 45px;
             display: flex;
             justify-content: center;
-            gap: 80px;
+            gap: 120px;
         }
         
         .signature {
@@ -222,13 +222,13 @@ template_html = '''<!DOCTYPE html>
         }
         
         .signature-line {
-            width: 200px;
+            width: 250px;
             border-top: 2px solid #2c3e50;
             margin-bottom: 8px;
         }
         
         .signature-name {
-            font-size: 14px;
+            font-size: 15px;
             color: #2c3e50;
             font-weight: 600;
         }
@@ -255,8 +255,8 @@ template_html = '''<!DOCTYPE html>
         
         .qr-code-container {
             position: absolute;
-            bottom: 8mm;
-            right: 20mm;
+            bottom: 20mm;
+            right: 25mm;
             text-align: center;
             z-index: 20;
             background: white;
@@ -280,7 +280,7 @@ template_html = '''<!DOCTYPE html>
         
         .certificate-id {
             position: absolute;
-            bottom: 8mm;
+            bottom: 20mm;
             left: 20mm;
             font-size: 10px;
             color: #95a5a6;
