@@ -240,11 +240,6 @@ template_html = '''<!DOCTYPE html>
             margin-top: 3px;
         }
         
-        .emojis {
-            font-size: 32px;
-            margin-top: 25px;
-            letter-spacing: 15px;
-        }
         
         .watermark {
             position: absolute;
@@ -360,8 +355,6 @@ template_html = '''<!DOCTYPE html>
                     <div class="signature-title">Docente</div>
                 </div>
             </div>
-            <div class="emojis">🤖 📚 🎓 🚀</div>
-        </div>
         
         <div class="qr-code-container">
             <img src="{{QR_CODE_DATA}}" alt="QR Code">
