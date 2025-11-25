@@ -2,3 +2,7 @@
 # PDFs locais - não fazer upload
 certificados_pdf/
 *.pdf
+
+# PDFs locais
+certificados_pdf/
+*.pdf
